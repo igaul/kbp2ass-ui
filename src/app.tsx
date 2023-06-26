@@ -1,7 +1,7 @@
-import { useState } from "preact/hooks";
-import { convertToASS } from "kbp2ass/src/ass";
-import logo from "/icon.svg";
-import { PropsWithChildren } from "preact/compat";
+import { useState } from 'preact/hooks';
+import { convertToASS } from 'kbp2ass/src/ass';
+import logo from '/icon.svg';
+import { PropsWithChildren } from 'preact/compat';
 import {
   ASPECT_RATIO_OPTIONS,
   AUDIO_BITRATE_OPTIONS,
@@ -14,11 +14,11 @@ import {
   VIDEO_CODEC_OPTIONS,
   defaultSubtitleOptions,
   defaultVideoOptions,
-} from "./constants";
+} from './constants';
 
 export function App() {
-  const [fileText, setFileText] = useState<string | undefined>();
-  const [files, setFiles] = useState([]);
+  const [_fileText, setFileText] = useState<string | undefined>();
+  const [files, _setFiles] = useState([]);
   const [videoOptions, setVideoOptions] = useState(defaultVideoOptions);
   const [subtitleOptions, setSubtitleOptions] = useState(
     defaultSubtitleOptions
@@ -42,7 +42,7 @@ export function App() {
           if (text) {
             // ? put in worker or async ?
             const result = convertToASS(text, {});
-            console.log("RESULT:", result.slice(0, 100));
+            console.log('RESULT:', result.slice(0, 100));
           }
           setFileText(text);
         };
@@ -217,8 +217,8 @@ const Row = ({
 }>) => (
   <div
     className={`flex ${
-      labelRight ? "flex-row-reverse" : "flex-row"
-    } flex-wrap ${narrow ? "" : "justify-between"} gap-2`}
+      labelRight ? 'flex-row-reverse' : 'flex-row'
+    } flex-wrap ${narrow ? '' : 'justify-between'} gap-2`}
   >
     <label className="text-slate-400">{title}</label>
     {children}
