@@ -1,0 +1,26 @@
+{
+  "name": "kbp2ass-ui",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0 --port 3000",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "kbp2ass": "github:igaul/kbp2ass-ts#688830a807169a0974b0bf584121942a2953a5c8",
+    "preact": "^10.13.2"
+  },
+  "devDependencies": {
+    "@preact/preset-vite": "^2.5.0",
+    "typescript": "^5.0.2",
+    "vite": "^4.3.9",
+    "autoprefixer": "^10.4.13",
+    "cssnano": "^5.1.15",
+    "postcss": "^8.4.21",
+    "prettier": "^2.8.4",
+    "prettier-plugin-tailwindcss": "^0.2.3",
+    "tailwindcss": "^3.2.7"
+  }
+}
