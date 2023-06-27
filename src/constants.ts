@@ -28,6 +28,7 @@ export const aspectRatioMap = {
 };
 
 export interface IVideoOptions {
+  bgColor: string;
   outputResolution: (typeof OUTPUT_RESOLUTION_OPTIONS)[number];
   overrideBackground: boolean;
   outputFileType: "mp4" | "mkv" | "webm";
@@ -50,6 +51,7 @@ export const defaultVideoOptions: IVideoOptions = {
   videoCodec: "h264",
   audioCodec: "aac",
   audioBitrate: "",
+  bgColor: "",
 };
 export const defaultSubtitleOptions: ISubtitleOptions = {
   aspectRatio: "CDG, borders (25:18)",

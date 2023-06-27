@@ -10,7 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "kbp2ass": "github:igaul/kbp2ass-ts#688830a807169a0974b0bf584121942a2953a5c8",
+    "kbp2ass": "github:ItMightBeKaraoke/kbp2ass#feature/additional_kbp_functionality",
     "preact": "^10.13.2"
   },
   "devDependencies": {

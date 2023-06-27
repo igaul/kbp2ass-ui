@@ -2,10 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+body{
+    background: #f5f5f5;
+}
 label.btn,
 button{
     border: gray 1px solid;
     border-radius: 5px;
     padding: 2px 8px;
     width: 100%;
+    text-align: center;
 }

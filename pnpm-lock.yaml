@@ -2,19 +2,19 @@ lockfileVersion: 5.4
 
 specifiers:
   '@preact/preset-vite': ^2.5.0
-  autoprefixer: ^10.4.14
+  autoprefixer: ^10.4.13
   cssnano: ^5.1.15
-  kbp2ass: github:igaul/kbp2ass-ts#688830a807169a0974b0bf584121942a2953a5c8
-  postcss: ^8.4.24
-  preact: ^10.15.1
-  prettier: ^2.8.8
-  prettier-plugin-tailwindcss: ^0.2.8
-  tailwindcss: ^3.3.2
-  typescript: ^5.1.3
+  kbp2ass: github:ItMightBeKaraoke/kbp2ass#feature/additional_kbp_functionality
+  postcss: ^8.4.21
+  preact: ^10.13.2
+  prettier: ^2.8.4
+  prettier-plugin-tailwindcss: ^0.2.3
+  tailwindcss: ^3.2.7
+  typescript: ^5.0.2
   vite: ^4.3.9
 
 dependencies:
-  kbp2ass: github.com/igaul/kbp2ass-ts/688830a807169a0974b0bf584121942a2953a5c8
+  kbp2ass: github.com/ItMightBeKaraoke/kbp2ass/95c6cfb25fab5793df16a99a293db01e77cc90b6
   preact: 10.15.1
 
 devDependencies:
@@ -634,6 +634,12 @@ packages:
   /arg/5.0.2:
     resolution: {integrity: sha512-PYjyFOLKQ9y57JvQ6QLo8dAgNqswh8M1RMJYdQduT6xbWSgK36P/Z/v+p888pM69jMMfS8Xd8F6I1kQ/I9HUGg==}
     dev: true
+
+  /ass-stringify/0.1.3:
+    resolution: {integrity: sha512-8kdRn8odBRFcDbcAGCIDR57zOcNECHyEDjCKzN20b2TzFsU2S4m+1GiI4vizR11dmHPdN65Xa11X4iCcC6kNMg==}
+    dependencies:
+      pick-values: 1.0.1
+    dev: false
 
   /autoprefixer/10.4.14_postcss@8.4.24:
     resolution: {integrity: sha512-FQzyfOsTlwVzjHxKEqRIAdJx9niO6VCBCoEwax/VLSoQF29ggECcPuBqUMZ+u8jCZOPSy8b8/8KnuFbp0SaFZQ==}
@@ -1275,6 +1281,10 @@ packages:
   /path-parse/1.0.7:
     resolution: {integrity: sha512-LDJzPVEEEPR+y48z93A0Ed0yXb8pAByGWo/k5YYdYgpY2/2EsOsksJrq7lOHxryrVOn1ejG6oAp8ahvOIQD8sw==}
     dev: true
+
+  /pick-values/1.0.1:
+    resolution: {integrity: sha512-Xr86yRoJqntrYyutz4xTU+N3+dKZO4ki0LIO4LGKQDu346Ka4tkv1fSPjOisLPfihzN6+TX6nxj90dkxEo8ikA==}
+    dev: false
 
   /picocolors/1.0.0:
     resolution: {integrity: sha512-1fygroTLlHu66zi26VoTDv8yRgm0Fccecssto+MhsZ0D/DGW2sm8E8AjW7NU5VVTRt5GxbeZ5qBuJr+HyLYkjQ==}
@@ -2009,11 +2019,12 @@ packages:
       yargs-parser: 21.1.1
     dev: false
 
-  github.com/igaul/kbp2ass-ts/688830a807169a0974b0bf584121942a2953a5c8:
-    resolution: {tarball: https://codeload.github.com/igaul/kbp2ass-ts/tar.gz/688830a807169a0974b0bf584121942a2953a5c8}
+  github.com/ItMightBeKaraoke/kbp2ass/95c6cfb25fab5793df16a99a293db01e77cc90b6:
+    resolution: {tarball: https://codeload.github.com/ItMightBeKaraoke/kbp2ass/tar.gz/95c6cfb25fab5793df16a99a293db01e77cc90b6}
     name: kbp2ass
-    version: 1.0.1
+    version: 1.1.0-0
     hasBin: true
     dependencies:
+      ass-stringify: 0.1.3
       yargs: 17.7.2
     dev: false

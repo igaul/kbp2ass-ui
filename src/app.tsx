@@ -1,7 +1,7 @@
-import { useState } from 'preact/hooks';
-import { convertToASS } from 'kbp2ass/src/ass';
-import logo from '/icon.svg';
-import { PropsWithChildren } from 'preact/compat';
+import { useState } from "preact/hooks";
+import { convertToASS } from "kbp2ass/src/ass";
+import logo from "/icon.svg";
+import { PropsWithChildren } from "preact/compat";
 import {
   ASPECT_RATIO_OPTIONS,
   AUDIO_BITRATE_OPTIONS,
@@ -14,11 +14,11 @@ import {
   VIDEO_CODEC_OPTIONS,
   defaultSubtitleOptions,
   defaultVideoOptions,
-} from './constants';
+} from "./constants";
 
 export function App() {
   const [_fileText, setFileText] = useState<string | undefined>();
-  const [files, _setFiles] = useState([]);
+  const [files, _setFiles] = useState<[string, string, string][]>([]);
   const [videoOptions, setVideoOptions] = useState(defaultVideoOptions);
   const [subtitleOptions, setSubtitleOptions] = useState(
     defaultSubtitleOptions
@@ -42,62 +42,64 @@ export function App() {
           if (text) {
             // ? put in worker or async ?
             const result = convertToASS(text, {});
-            console.log('RESULT:', result.slice(0, 100));
+            console.log("RESULT:", result.slice(0, 100));
           }
           setFileText(text);
         };
+        reader.readAsText(file);
       }
     } catch (error) {
       console.error(error);
     }
   };
   return (
-    <div className="flex flex-row h-full min-h-screen">
+    <div className="flex flex-row bg-gray-50 shadow-md h-full min-h-screen max-w-screen-2xl m-auto">
       <input
         type="file"
         id="singleFileInput"
         className="absolute -top-96"
         onChange={handleFilesSelect}
       />
-      <div className="flex flex-col gap-4 w-[75%] relative ">
+      <div className="flex flex-col gap-2 w-[75%] relative sm:gap-4">
         <div className="flex flex-col h-full p-1">
-          <div className="flex flex-row justify-evenly border-y">
+          <div className="flex flex-row justify-evenly border border-gray-300">
             {COLUMNS.map(h => (
               <div
                 key={h}
-                className="w-full text-center border-r border-gray-300"
+                className="w-full text-center border-x border-gray-300"
               >
                 {h}
               </div>
             ))}
           </div>
-          <div className="flex flex-col h-full border border-gray-300 rounded relative">
+          <div className="flex flex-col h-full border border-gray-300 bg-gray-100 rounded rounded-t-none relative">
             {files.map(f => (
               <div
                 key={f}
-                className="w-full text-center border-r border-gray-300"
+                className="w-full text-center flex flex-row justify-evenly border-gray-300 odd:bg-gray-200"
               >
-                {f}
+                {f.map(c => (
+                  <div>{c}</div>
+                ))}
               </div>
             ))}
             <img
-              className="h-full w-full absolute inset-10 opacity-20"
+              className="h-full w-full absolute inset-0 opacity-20 bg-transparent"
               src={logo}
               alt=""
             />
           </div>
         </div>
-        <div className="flex gap-2 p-3">
+        <div className="flex gap-2 p-1 sm:p-3">
           <div className="flex flex-col w-full">
             <div className="text-gray-600 p-1 px-2 text-center">
               Drag/Drop files/folders above or use buttons below
             </div>
             <div className="flex flex-row gap-2">
-              <label
-                htmlFor="singleFileInput"
-                className="text-center border border-red-400 btn"
-              >
-                Add Files
+              <label htmlFor="singleFileInput" className="btn">
+                <div className="flex flex-col h-full justify-center">
+                  Add Files
+                </div>
               </label>
 
               <button>Remove Selected</button>
@@ -106,7 +108,7 @@ export function App() {
           </div>
         </div>
       </div>
-      <div className="flex flex-col p-3 w-[25%] max-w-sm">
+      <div className="flex flex-col p-1 sm:p-3 w-[25%] max-w-sm">
         <div className="flex flex-col gap-4 py-3 h-full max-h-[calc(100vh-62px)] overflow-y-auto">
           <Section title="Subtitle Options">
             <RowSelect
@@ -217,8 +219,8 @@ const Row = ({
 }>) => (
   <div
     className={`flex ${
-      labelRight ? 'flex-row-reverse' : 'flex-row'
-    } flex-wrap ${narrow ? '' : 'justify-between'} gap-2`}
+      labelRight ? "flex-row-reverse" : "flex-row"
+    } flex-wrap ${narrow ? "" : "justify-between"} gap-2`}
   >
     <label className="text-slate-400">{title}</label>
     {children}
@@ -273,7 +275,7 @@ const RowSelect = <K extends string, N>({
       className="border border-gray-200 rounded px-2"
     >
       {options.map(v => (
-        <option selected={currentValue === v} value={v}>
+        <option selected={currentValue === v} value={v} key={v}>
           {v}
         </option>
       ))}
