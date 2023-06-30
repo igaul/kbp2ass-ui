@@ -10,17 +10,18 @@
   },
   "dependencies": {
     "kbp2ass": "github:igaul/kbp2ass-ts#ts-strict",
-    "preact": "^10.13.2"
+    "preact": "^10.13.2",
+    "react-dropzone": "^14.2.3"
   },
   "devDependencies": {
     "@preact/preset-vite": "^2.5.0",
-    "typescript": "^5.0.2",
-    "vite": "^4.3.9",
     "autoprefixer": "^10.4.13",
     "cssnano": "^5.1.15",
     "postcss": "^8.4.21",
     "prettier": "^2.8.4",
     "prettier-plugin-tailwindcss": "^0.2.3",
-    "tailwindcss": "^3.2.7"
+    "tailwindcss": "^3.2.7",
+    "typescript": "^5.0.2",
+    "vite": "^4.3.9"
   }
 }
