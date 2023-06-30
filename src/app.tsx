@@ -28,7 +28,7 @@ export function App() {
       const text = e?.target?.result?.toString();
       if (text) {
         // ? put in worker ?
-        const result = convertToASS(text, {});
+        const result = convertToASS(text);
         const linkData =
           "data:text/plain;charset=utf-8," + window.encodeURIComponent(result);
         setProcessedData({ href: linkData, download: name });
@@ -136,7 +136,7 @@ export function App() {
           </div>
         </div>
       </div>
-      <div className="h-screen w-screen z-10 bg-slate-400/75 fixed inset-0 flex flex-col justify-center gap-4">
+      <div className="h-screen w-screen z-10 bg-slate-400/75 fixed inset-0 flex flex-col justify-center gap-2">
         <div className="ring-4 ring-blue-700 text-blue-700 text-xl font-bold tracking-wide rounded m-auto shadow hover:bg-blue-600 hover:text-blue-50 hover:shadow-lg hover:ring-8 hover:ring-blue-600">
           <Dropzone onFiles={handleFiles} />
         </div>
