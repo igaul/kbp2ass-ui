@@ -1,5 +1,7 @@
 ## kbp2ass converter ui
 
+[live](https://kbp2ass.livekj.com/)
+
 ### build requirements:
 
 - node >= 16

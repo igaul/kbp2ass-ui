@@ -1,6 +1,5 @@
 import { useState, useRef } from "preact/hooks";
-// import { convertToASS } from 'kbp2ass/src/ass';
-import { convertToASS } from "../../kbp2ass-ts/src/ass";
+import { convertToASS } from "kbp2ass/src/ass";
 import logo from "/icon.svg";
 import { PropsWithChildren } from "preact/compat";
 import {
@@ -44,7 +43,7 @@ export function App() {
           const text = e?.target?.result?.toString();
           if (text) {
             // ? put in worker ?
-            const result = convertToASS(text);
+            const result = convertToASS(text, {});
             const linkData =
               "data:text/plain;charset=utf-8," +
               window.encodeURIComponent(result);
