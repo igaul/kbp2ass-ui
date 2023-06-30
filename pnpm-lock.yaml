@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@preact/preset-vite': ^2.5.0
+  '@tauri-apps/api': ^1.4.0
   autoprefixer: ^10.4.13
   cssnano: ^5.1.15
   kbp2ass: github:igaul/kbp2ass-ts#ts-strict
@@ -15,7 +16,8 @@ specifiers:
   vite: ^4.3.9
 
 dependencies:
-  kbp2ass: github.com/igaul/kbp2ass-ts/4ee889a33bb9fc7aff425a9337ec5476a1626693
+  '@tauri-apps/api': 1.4.0
+  kbp2ass: github.com/igaul/kbp2ass-ts/03ab12696d8d2c966f84cfd1ad7f2eb43d2cf6c4
   preact: 10.15.1
   react-dropzone: 14.2.3
 
@@ -596,6 +598,11 @@ packages:
       estree-walker: 2.0.2
       picomatch: 2.3.1
     dev: true
+
+  /@tauri-apps/api/1.4.0:
+    resolution: {integrity: sha512-Jd6HPoTM1PZSFIzq7FB8VmMu3qSSyo/3lSwLpoapW+lQ41CL5Dow2KryLg+gyazA/58DRWI9vu/XpEeHK4uMdw==}
+    engines: {node: '>= 14.6.0', npm: '>= 6.6.0', yarn: '>= 1.19.1'}
+    dev: false
 
   /@trysound/sax/0.2.0:
     resolution: {integrity: sha512-L7z9BgrNEcYyUYtF+HaEfiS5ebkh9jXqbszz7pC0hRBPaatV0XjSD3+eHrpqFemQfgwiFF0QPIarnIihIDn7OA==}
@@ -2065,8 +2072,8 @@ packages:
       yargs-parser: 21.1.1
     dev: false
 
-  github.com/igaul/kbp2ass-ts/4ee889a33bb9fc7aff425a9337ec5476a1626693:
-    resolution: {tarball: https://codeload.github.com/igaul/kbp2ass-ts/tar.gz/4ee889a33bb9fc7aff425a9337ec5476a1626693}
+  github.com/igaul/kbp2ass-ts/03ab12696d8d2c966f84cfd1ad7f2eb43d2cf6c4:
+    resolution: {tarball: https://codeload.github.com/igaul/kbp2ass-ts/tar.gz/03ab12696d8d2c966f84cfd1ad7f2eb43d2cf6c4}
     name: kbp2ass
     version: 1.1.0-0
     hasBin: true
