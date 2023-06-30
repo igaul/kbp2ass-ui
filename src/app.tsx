@@ -218,7 +218,7 @@ export function App() {
       </div>
       <div className="h-screen w-screen z-10 bg-slate-400/75 fixed inset-0 flex flex-col justify-center gap-4">
         <div>
-          <div className="bg-blue-700 text-slate-100 text-xl font-bold tracking-wide rounded w-fit m-auto py-4 px-6 shadow">
+          <div className="bg-blue-700  text-slate-100 text-xl font-bold tracking-wide rounded w-fit m-auto py-4 px-6 shadow hover:bg-blue-600 hover:shadow-lg">
             <label htmlFor="singleFileInput">
               <div className="flex flex-col h-full justify-center">
                 Select KBP File
@@ -229,7 +229,7 @@ export function App() {
 
         <div>
           {processedData && (
-            <div className="bg-green-500 text-green-50 text-xl rounded w-fit m-auto p-4 select-none">
+            <div className="bg-green-500 hover:shadow text-green-50 text-xl rounded w-fit m-auto p-4 select-none">
               <a ref={downloadRef} {...processedData}>
                 Download&ensp;
                 <span className="py-2 rounded px-4 bg-green-600">
