@@ -19,7 +19,7 @@ export function Dropzone({ onFiles }: { onFiles: (files: File[]) => void }) {
       <input {...(getInputProps() as any)} />
       <p className="p-8 min-w-[350px] h-52 flex flex-col justify-center items-center">
         {isDragActive ? (
-          "  Drop the here"
+          <span>Drop Here</span>
         ) : (
           <span>
             Drop kbp files here
