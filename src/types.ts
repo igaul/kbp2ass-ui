@@ -1,4 +1,7 @@
-import type { StateUpdater } from "preact/hooks";
-
-export type TSet<T> = (name: keyof T, value: T[keyof T]) => void;
-export type TSectionProps<T> = { data: T; setter: StateUpdater<T> };
+export type TSectionEl<T> =
+  | {
+      title: string;
+      name: keyof T;
+      kind: "number" | "boolean" | "color";
+    }
+  | { title: string; name: keyof T; options: T[keyof T][]; kind: "select" };
