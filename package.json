@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@tauri-apps/api": "^1.4.0",
     "kbp2ass": "github:igaul/kbp2ass-ts#ts-strict",
     "preact": "^10.13.2",
     "react-dropzone": "^14.2.3"

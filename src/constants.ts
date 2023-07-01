@@ -1,3 +1,5 @@
+import type { TSectionEl } from "./types";
+
 export const OUTPUT_RESOLUTION_OPTIONS = [
   "1500x1080",
   "1920x1080 (1080p)",
@@ -77,5 +79,83 @@ export const containerOptionsMap: Record<
   ],
   webm: [["libvpx-vp9", "libaom-av1"], ["libopus"]],
 };
-export const OUTPUT_FILE_TYPE_OPTIONS: IVideoOptions["outputFileType"][] =
-  Object.keys(containerOptionsMap) as IVideoOptions["outputFileType"][];
+export const OUTPUT_FILE_TYPE_OPTIONS = Object.keys(
+  containerOptionsMap
+) as IVideoOptions["outputFileType"][];
+
+export const subtitleOptionsSection: TSectionEl<ISubtitleOptions>[] = [
+  {
+    title: "Aspect Ratio",
+    name: "aspectRatio",
+    kind: "select",
+    options: ASPECT_RATIO_OPTIONS,
+  },
+  {
+    title: "Fade In",
+    name: "fadeInMs",
+    kind: "number",
+  },
+  {
+    title: "Fade Out",
+    name: "fadeOutMs",
+    kind: "number",
+  },
+  {
+    title: "Override Timestamp Offset",
+    name: "overrideTimestampOffset",
+    kind: "boolean",
+  },
+  {
+    title: "Timestamp Offset",
+    name: "timestampOffsetMs",
+    kind: "number",
+  },
+  {
+    title: "Draw Background Color Transparent",
+    name: "drawBgColorTransparent",
+    kind: "boolean",
+  },
+];
+
+export const videoOptionsSection: TSectionEl<IVideoOptions>[] = [
+  {
+    title: "Background Color",
+    name: "bgColor",
+    kind: "color",
+  },
+  {
+    title: "Output Resolution",
+    name: "outputResolution",
+    kind: "select",
+    options: OUTPUT_RESOLUTION_OPTIONS,
+  },
+  {
+    title: "Override Background",
+    name: "overrideBackground",
+    kind: "boolean",
+  },
+  {
+    title: "Output File Type",
+    name: "outputFileType",
+    kind: "select",
+    options: OUTPUT_FILE_TYPE_OPTIONS,
+  },
+  {
+    title: "Video Codec",
+    name: "videoCodec",
+    kind: "select",
+    options: VIDEO_CODEC_OPTIONS,
+  },
+  {
+    title: "Audio Codec",
+    name: "audioCodec",
+    kind: "select",
+    options: AUDIO_CODEC_OPTIONS,
+  },
+  {
+    title: "Audio Bitrate",
+    name: "audioBitrate",
+    kind: "select",
+    options: AUDIO_BITRATE_OPTIONS,
+  },
+];
