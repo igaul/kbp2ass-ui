@@ -1,9 +1,19 @@
+import { PropsWithChildren } from "preact/compat";
 import { useCallback } from "preact/hooks";
 import { useDropzone } from "react-dropzone";
 const accept = {
   "text/plain": [".kbp"],
 };
-export function Dropzone({ onFiles }: { onFiles: (files: File[]) => void }) {
+const containerProps = { className: "h-full" };
+type TProps = PropsWithChildren<{
+  onFiles: (files: File[]) => void;
+  isDroppingText?: string;
+}>;
+export function Dropzone({
+  onFiles,
+  isDroppingText = "Drop Here",
+  children,
+}: TProps) {
   const onDrop = useCallback((acceptedFiles: File[]) => {
     onFiles(acceptedFiles);
   }, []);
@@ -15,16 +25,13 @@ export function Dropzone({ onFiles }: { onFiles: (files: File[]) => void }) {
   });
 
   return (
-    <div {...getRootProps()}>
+    <div {...getRootProps(containerProps)}>
       <input {...(getInputProps() as any)} />
-      <p className="p-8 min-w-[350px] h-52 flex flex-col justify-center items-center">
+      <p className="p-10 min-w-[350px] h-full flex flex-col justify-center items-center">
         {isDragActive ? (
-          <span>Drop Here</span>
+          <span className="p-3 text-xl font-semibold">{isDroppingText}</span>
         ) : (
-          <span>
-            Drop kbp files here
-            <br /> or click to select files
-          </span>
+          children
         )}
       </p>
     </div>

@@ -53,7 +53,7 @@ export const defaultVideoOptions: IVideoOptions = {
   videoCodec: "h264",
   audioCodec: "aac",
   audioBitrate: "",
-  bgColor: "",
+  bgColor: "00FFFFFF",
 };
 export const defaultSubtitleOptions: ISubtitleOptions = {
   aspectRatio: "CDG, borders (25:18)",
