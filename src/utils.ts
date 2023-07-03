@@ -70,6 +70,7 @@ export const toFfmpegCmd = ({
   return cmds.join("");
 };
 
+// @ts-ignore
 function isDark(hex: string, cutoff = 128): boolean {
   // https://stackoverflow.com/questions/12043187/how-to-check-if-hex-color-is-too-black
   const rgb = parseInt(hex.startsWith("#") ? hex.substring(1) : hex, 16);
