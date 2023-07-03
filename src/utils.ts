@@ -1,5 +1,5 @@
 import { convertToASS } from "kbp2ass/src/ass";
-import { TProcessedFile } from "./types";
+import { TFileInfo, TProcessedFile } from "./types";
 
 /** create ass format data url and filename from kbp file */
 export const processFile = async (file: File): Promise<TProcessedFile | null> =>
@@ -12,7 +12,11 @@ export const processFile = async (file: File): Promise<TProcessedFile | null> =>
         const result = convertToASS(text);
         const dataUrl =
           "data:text/plain;charset=utf-8," + window.encodeURIComponent(result);
-        return resolve({ href: dataUrl, download: filename });
+        return resolve({
+          dataHref: dataUrl,
+          filename: filename,
+          assFileStr: result,
+        });
       } else {
         // TODO: some error?
         return resolve(null);
@@ -35,6 +39,19 @@ export async function convertKbpFilesToAss(
     return null;
   }
 }
+
+export const processedAssToInfo = ({
+  filename,
+  assFileStr,
+}: TProcessedFile): TFileInfo => ({
+  filename,
+  assFileStr,
+});
+
+export const convertKbpFilesToAssInfo = async (
+  files: FileList | File[] | null
+): Promise<TFileInfo[] | null> =>
+  convertKbpFilesToAss(files).then(d => (d ? d.map(processedAssToInfo) : d));
 
 export const toFfmpegCmd = ({
   bgType,
@@ -82,3 +99,5 @@ function isDark(hex: string, cutoff = 128): boolean {
 
   return luma > cutoff;
 }
+
+export const stopPropagation = (e: Event) => e.stopPropagation();

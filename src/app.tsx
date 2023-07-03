@@ -30,14 +30,14 @@ const Info = () => {
   const [isOpen, setisOpen] = useState(false);
   return (
     <div
-      className="fixed top-2 left-2 bg-slate-100 rounded-full"
+      className="fixed top-0 left-0 bg-slate-100 rounded-full z-20"
       onClick={() => setisOpen(p => !p)}
     >
       {isOpen ? (
-        <ul className="flex flex-col gap-2 p-4 bg-slate-100 rounded-2xl">
+        <ul className="flex flex-col gap-2 p-4 pl-6 pt-6 bg-slate-100 rounded-2xl shadow-lg">
           <li>kbp to ass file converter</li>
           <li>
-            Layout and ffmpeg logic Based on python/qt app:{" "}
+            Layout and ffmpeg commands based on Python/QT app:{" "}
             <a
               className="underline text-blue-600"
               href="https://github.com/ItMightBeKaraoke/kbp2video/blob/main/kbp2video"

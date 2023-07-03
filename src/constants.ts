@@ -53,7 +53,8 @@ export const defaultVideoOptions: IVideoOptions = {
   videoCodec: "h264",
   audioCodec: "aac",
   audioBitrate: "",
-  bgColor: "00FFFFFF",
+  // transparent black
+  bgColor: "00000000",
 };
 export const defaultSubtitleOptions: ISubtitleOptions = {
   aspectRatio: "CDG, borders (25:18)",
@@ -64,7 +65,7 @@ export const defaultSubtitleOptions: ISubtitleOptions = {
   drawBgColorTransparent: true,
 };
 
-export const COLUMNS = ["KBP", "Audio", "Background"];
+export const COLUMNS = ["Sub File", "Audio", "Background"];
 export const ASPECT_RATIO_OPTIONS = Object.keys(
   aspectRatioMap
 ) as ISubtitleOptions["aspectRatio"][];
