@@ -24,7 +24,7 @@ export function QuickMode() {
   };
   return (
     <div className="h-screen w-screen bg-slate-400/75 flex flex-col justify-center gap-2 relative">
-      <div className="h-full w-full text-blue-800 text-xl font-bold tracking-wide rounded m-auto shadow hover:bg-blue-500/40 hover:text-blue-50 transition-colors">
+      <div className="h-full w-full text-blue-800 text-xl font-bold tracking-wide rounded m-auto shadow hover:bg-blue-500/40 hover:text-blue-50 transition-colors z-10">
         <Dropzone onFiles={handleFiles}>
           <div className="text-center text-2xl z-20 h-full w-full flex flex-col justify-center gap-4">
             <span>Drop kbp files here and get ass</span>
