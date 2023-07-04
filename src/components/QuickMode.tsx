@@ -34,7 +34,7 @@ export function QuickMode() {
       </div>
 
       {processedData.length > 0 && (
-        <div className="fixed top-2 right-2">
+        <div className="fixed top-2 right-2 z-10">
           <div className="flex flex-col gap-2">
             {processedData.map(({ filename, dataHref }) => (
               <div className="bg-green-500 hover:shadow text-green-50 text-xl rounded w-fit m-auto p-4 select-none">
